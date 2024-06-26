@@ -1,12 +1,12 @@
-Problem Statement : 
+__Problem Statement__ : 
 Audio Transcription and Summarization with FastAPI
 
-Objective:
+__Objective__:
 You are tasked with developing a system that handles audio files by transcribing them, summarizing the
 content, extracting timestamps, and saving the results locally. Additionally, you will implement a FastAPI
 server to handle endpoints for this process.
 
-Requirements:
+__Requirements__:
 1. Transcription: Utilize the whisper-large-v3 model from OpenAI to transcribe the audio file
 provided. Implement this using asynchronous endpoints in FastAPI to handle potentially large
 audio files efficiently. Ensure the transcription handles common audio formats such
