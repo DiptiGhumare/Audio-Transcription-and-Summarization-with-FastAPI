@@ -19,19 +19,19 @@ transcribed text from the audio file.
 events or changes in content occur. These timestamps should be correlated with the
 transcription.
 
-Implementation:
+__Implementation__:
 
-Whisper : 
+__Whisper__ : 
 Whisper is an advanced automatic speech recognition (ASR) model developed by OpenAI. It is designed to transcribe spoken language into written text with exceptional accuracy. Whisper excels at handling a variety of accents, background noises, and multiple languages, making it a robust tool for diverse transcription needs.
 
-Audio Transcription :
+__Audio Transcription__ :
 Audio transcription is the process of converting spoken words from an audio file into written text. This process is useful for generating meeting notes, creating subtitles for videos, enhancing accessibility for the hearing impaired, and many other applications.
 
-Real-Time Use Case: Sentiment Analysis
+__Real-Time Use Case: Sentiment Analysis__
 Unique Real-World Application: Sentiment Analysis of Transcriptions
 This project not only transcribes and summarizes audio files but can also be extended for sentiment analysis of the transcriptions. Imagine you have a large number of customer service calls, and you need to analyze the overall sentiment of these conversations to improve customer satisfaction.
 
-Use Case: Customer Feedback Analysis
+__Use Case: Customer Feedback Analysis__
 
 Step 1: Transcription: Upload audio recordings of customer service calls.
 Step 2: Summarization: Get a concise summary of each call.
@@ -50,7 +50,7 @@ Transcription Service: Upload an audio file and receive a text transcription.
 Summarization Service: Obtain a concise summary of the transcribed text.
 Timestamp Service: Get word-level timestamps for the transcription, detailing when each word was spoken.
 
-Requirements
+__Requirements__
 Python 3.8+
 FastAPI
 Uvicorn
@@ -60,32 +60,33 @@ shutil
 ffmpeg (required for audio processing)
 
 
-Set Up a Virtual Environment
+__Set Up a Virtual Environment__
 
 python -m venv .venv
 source .venv/bin/activate  
 
-Install Required Packages:
+__Install Required Packages__:
 
 pip install -r requirements.txt
 
 Install FFmpeg:
 Follow the instructions on the FFmpeg download page to install FFmpeg and add it to your system's PATH.  
 
-Running the Application 
+__Running the Application__ 
 Start the FastAPI Server:
 uvicorn main:app --reload
 
-Access API Documentation:
+__Access API Documentation__:
 Open a web browser and navigate to http://127.0.0.1:8000/docs to view the interactive API documentation.
 
-Upload and Process an Audio File:
+__Upload and Process an Audio File__:
 
 Use the /transcribe endpoint to upload an audio file. The endpoint returns the transcription, a summary of the text, and word-level timestamps.
 
-API Endpoints
+__API Endpoints__
 POST /transcribe: Upload an audio file to receive the transcription, summary, and timestamps.
-Directory Structure
+
+__Directory Structure__
 
 .
 ├── main.py                   # Main FastAPI application
@@ -96,20 +97,21 @@ Directory Structure
 ├── uploads/                  # Directory to save uploaded audio files
 ├── results/                  # Directory to store the generated transcription and summary files
 
-File Descriptions
-main.py
+__File Description__
+
+__main.py__
 The main entry point for the FastAPI application. It defines the API endpoints, handles file uploads, and orchestrates the transcription and summarization processes.
 
-data.py
+__data.py__
 Includes functions to save transcriptions, summaries, and timestamps to the file system. This ensures that results are stored securely and can be accessed later.
 
-transcription.py
+__transcription.py__
 Implements the transcription functionality using a pre-trained ASR model from the transformers library. It reads audio files and outputs the transcribed text along with word-level timestamps.
 
-summarization.py
+__summarization.py__
 Uses a summarization model from the transformers library to create brief summaries of the transcribed text. This allows users to quickly grasp the main points of the transcription.
 
-requirements.txt
+__requirements.txt__
 Lists all the dependencies required for the project, including FastAPI for the web framework, Uvicorn as the ASGI server, and transformers for the machine learning models.
 
 This API offers a streamlined and efficient way to transcribe and summarize audio files, utilizing advanced machine learning models to deliver accurate and timely results.
